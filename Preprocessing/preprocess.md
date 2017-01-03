@@ -31,7 +31,7 @@
     + Reduce the data fields to a given range (based on special functions, z-score...)
     + Extract a higher concept layer (discrete) eg. young old ...
 * Data Reduction (Massive Datasets, optimize the data mining efficiency on the data level):
-    + [**Dimensional**] (Figure out an efficient data representation instead of applying massive raw datasets)
+    + [**Dimensional**] Figure out an efficient data representation instead of applying massive raw datasets
         - Data encoding/compression (file type)
         - Attribute Extracting (Select interesting fields)
     + [**Numerical**]
