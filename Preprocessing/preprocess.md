@@ -38,4 +38,11 @@
         - Mathematical transformation to represent the same data with smaller scale:
             + Parametric Model (regression, linear model)
             + Non-parametric Model (visualization, clustering, sampling)
+
+***Workflow:***
+
+* Data integration
+* Data cleaning
+* Data reduction
+* Data transformation
             
