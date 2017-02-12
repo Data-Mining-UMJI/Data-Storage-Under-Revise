@@ -45,4 +45,46 @@
 * Data cleaning
 * Data reduction
 * Data transformation
-            
+
+* Motivation for Extracting Data to an external file instead of processing inside the database
+    - We want to keep the raw data inside the DB to avoid losing useful features in one direction-oriented preprocessing.
+    - With the external files, we can reuse them to run different algorithms.
+
+
+
+### Data Cleaning
+
+* Dealing with missing data:
+    - Partial Deletion:
+        + Listwise Deletion [Delete the problematic entries even if they contains useful info]
+        + Pairwise Deletion [When dealing with the problematic entries which contains both useful and missing values, retain the useful fields while deleting the missing values]
+        eg: LifeSpan (given birth dates but some don't have death dates), Height.
+    - Imputaion:
+        + Motivation: When the dataset is small, PARTIAL DELETION will fail since the related evaluated results are not representative.
+        + Solution: Get imputed values, kind of guessing
+            * [I] Get the mean of all the non-missed values: Don't change the mean, but not good when evaluating the relationship between field and field. (eg. Height v.s. Weight)
+            * [II] Linear Regression:
+                - Overemphasize/Amplify the trends, and all our data follows that trends.
+                - Exact values suggest too much certainty. However, what's accurate is a kind of range.
+            * More Robust approaches are left to be learnt...
+
+
+### Data Integration
+
+* Attributes Redundancy
+    - Kai-Square Correlation Test: [Along with correlation coefficient and the covariance]
+        + Restriction: Numerical, Finite range, nominal (classification) attributes [multi-variate case formulas not covered in the book.]
+        + Working Pattern: Based on a contingency table <a_i, b_i>, where a_i, b_i correspond to the i-th entry of attribute A, B, we calculated a statistical result with specific formulas, then compare the result with the reference result table or 0 to decide whether A and B are positively/none/negatively dependent.
+        + Reference Page: P41-42 in Springer's Book. [Check the corresponding formulas.]
+    - Possible Reasons:
+        + Denormalization Table (optimize the query performance in a human-readable way), and it will construct a lot of redundant entries.
+
+
+* Data Encoding Problems
+
+* Attribute Value Conflicts 
+
+
+### Overall Restriction:
+
+* Most approaches are based numerical data, and need spending more time to deal with other types.
