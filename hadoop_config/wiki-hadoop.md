@@ -3,11 +3,14 @@
     - Map:
         + Raw Data => map() => <key, value>
             * All the pairs are passed to several reducers.
+    - Between the Map() and Reduce(), Hadoop conducts shuffle and sort such that all the pairs with the same key are collected together and be sorted with respect to the key.
     - Reduce:
         + <key, value> => reduce() => final results
             * Do kind of Aggregation
     - Map/Reduce Functions are defined by users.
     - All the above operations are done in parallel, which means on all the nodes run the corresponding map/reduce functions at the same time.
+    - We can test the program without Hadoop just with Unix ***pipeline*** and ***sort*** commands.
+    - Hadoop distributes the Map() function to each datanode, and distributes the resulted groups to Reduce() function. 
 
 * Hadoop:
     - Origin from Google.
@@ -37,7 +40,7 @@
 
 * MapReduce Mechanism:
     - Mapper: see which parts can be processed in parallel instead of in serial.
-    - Reducer: Manipulate the piled parts on each Reducer in parallel.
+    - Reducer: Manipulate the piled parts on each Reducer in parallel, and the default case for Hadoop only has one reducer.
     + Data is passed as {key: value} pairs from Mappers to Reducers.
 
 * Pseudo-HDFS:
