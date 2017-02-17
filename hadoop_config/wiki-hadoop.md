@@ -4,6 +4,8 @@
         + Raw Data => map() => <key, value>
             * All the pairs are passed to several reducers.
     - Between the Map() and Reduce(), Hadoop conducts shuffle and sort such that all the pairs with the same key are collected together and be sorted with respect to the key.
+    - Shuffle and group:
+        + Hadoop shuffle the <key, value> pairs into different partitions with respect to the key value (stable hash map), and sort within each partition by key. If only 1 reducer is specified, HDFS will conduct global merge sorting to aggregate all partitions into one group, which is passed to that reducer. Otherwise, *n* intermediate groups will be formed, where *n* is the number of the reducers.
     - Reduce:
         + <key, value> => reduce() => final results
             * Do kind of Aggregation
@@ -58,3 +60,9 @@
 
 * Question:
     - Why if each reducer generate many output files for HDFS to manage, then apply fewer reducers than cores can be better?
+
+
+###  Useful Links
+
+* http://sci2s.ugr.es/BigData
+* https://bdataanalytics.biomedcentral.com/articles/10.1186/s41044-016-0014-0
