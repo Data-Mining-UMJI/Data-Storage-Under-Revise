@@ -20,3 +20,8 @@
     - Spark [Currently Suggested Method]:
         + ***To be studied.***
   
+
+### Spark
+
+* How does Spark make RDDs resilient in case a partition is lost?
+    - Tracks the history of each partition and reruns what is needed to restore it.

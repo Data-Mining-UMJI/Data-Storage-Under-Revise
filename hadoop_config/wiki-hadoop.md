@@ -30,6 +30,10 @@
             * When applying Hadoop's MapReduce framework, we have to exactly follow the Map/Reduce workflow. So it should have a mapper and a reducer state, not more or less. Thus Spark provides more combinations such as map=>reduce=>map.
             * Hadoop's MapReduce is based on JAVA protosomatically. We can do programming in Python, but the overall invoking is not user-friendly. We have too handle complicated commands when applying Hadoop Streaming [Mechanism to enable writing Map/Reduce codes in any language] to run Map/Reduce with Python.
     - Better to apply if requiring multiple processing, which frequently happen in Machine Learning.
+    - Memory-base processing, Spark applies in-memory caching of data, which is specified by the user, which accesses great performance in iterative algorithms based on the same dataset => so gains 10~100 faster speed than Hadoop MapReduce.
+
+* Spark Mechanism
+    - Instead of writing Map() and Reduce() separately, we use a general function to adapt to the required works.
 
 
 * Core Hadoop:
