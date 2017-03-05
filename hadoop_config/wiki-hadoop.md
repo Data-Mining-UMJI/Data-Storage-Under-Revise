@@ -17,6 +17,13 @@
 * Hadoop:
     - Origin from Google.
     - Name comes from the name of a toy elephant of the son of Doug Cutting, one of the developers of the Hadoop.
+    - Move computation to data.
+    - Apache Framework Basic Modules:
+        + Hadoop Common (Basic libs and utilities for hadoop components)
+        + HDFS (Core File System)
+        + Hadoop YARN (Resource Management Platform, scheduler to manage the worknodes in the cluster)
+        + Hadoop MapReduce (Scalable Data Processing Framework)
+    - All the components in Hadoop are dealing with a primary concept --- reliability, against the situations when XXX fails.
     - Can't deal with real-time data since HDFS works based on batch job, which will cumulate certain amount of data, then do its work. Thus HDFS serves as a static database, which is the target case for MapReduce framework.
     - HBase: Solution to implement the pseudo real-time data storage for Hadoop. But can only work periodically due to the initial raw-data importing way. (batch job instead of Message Queue, which works as Streams)
 

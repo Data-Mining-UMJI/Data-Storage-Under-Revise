@@ -18,10 +18,27 @@
     - Pig/Hive:
         + ***To be studied.***
     - Spark [Currently Suggested Method]:
-        + ***To be studied.***
-  
+        + Data Cleaning
+            - Noisy Points [TBD, based on other ML algorithms]
+            - Missed Value
+                + filter to eliminate
+                + fill to missed values
+        + Data Integration
+            - ChiSqTest/CorrelationTest
+                * https://spark.apache.org/docs/2.0.2/api/python/pyspark.mllib.html?highlight=chi#pyspark.mllib.stat.Statistics.chiSqTest
+            - MetaData Comparasion
+
+### Data Integration Methods
+
+* How traditional ETL methods differ from Hadoop?
+
 
 ### Spark
 
 * How does Spark make RDDs resilient in case a partition is lost?
     - Tracks the history of each partition and reruns what is needed to restore it.
+    
+    
+### Others
+
+* One important point in Hadoop-like architecture is to apply the characteristics of the static data. Then cache-like strategies can be applied to improve the efficiency when dealing with the Big Data.
